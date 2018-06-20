@@ -1,69 +1,69 @@
 /* eslint no-undef: "off" */
 /* eslint jasmine/no-spec-dupes: "off" */
 
-describe('Turn duration of the movies - turnHoursToMinutes', function () {
-  it('Defines turnHoursToMinutes', function () {
-    expect(typeof turnHoursToMinutes).toBe('function');
-  });
+// describe('Turn duration of the movies - turnHoursToMinutes', function () {
+//   it('Defines turnHoursToMinutes', function () {
+//     expect(typeof turnHoursToMinutes).toBe('function');
+//   });
 
-  it('Should return an array', function () {
-    expect(typeof turnHoursToMinutes(movies)).toBe('object');
-  });
+//   it('Should return an array', function () {
+//     expect(typeof turnHoursToMinutes(movies)).toBe('object');
+//   });
 
-  it('Should return a new array, not update the original one', function () {
-    expect(turnHoursToMinutes(movies)).not.toEqual(movies);
-  });
+//   it('Should return a new array, not update the original one', function () {
+//     expect(turnHoursToMinutes(movies)).not.toEqual(movies);
+//   });
 
-  it('The duration of the movie should be a number', function () {
-    expect(typeof turnHoursToMinutes(movies)[0].duration).toBe('number');
-  });
+//   it('The duration of the movie should be a number', function () {
+//     expect(typeof turnHoursToMinutes(movies)[0].duration).toBe('number');
+//   });
 
-  it('The duration of the movie should return the correct number to a short movie - 31 minutes', function () {
-    var movieTry = [{ duration: '0h 31min' }];
+//   it('The duration of the movie should return the correct number to a short movie - 31 minutes', function () {
+//     var movieTry = [{ duration: '0h 31min' }];
 
-    expect(turnHoursToMinutes(movieTry)[0].duration).toBe(31);
-  });
+//     expect(turnHoursToMinutes(movieTry)[0].duration).toBe(31);
+//   });
 
-  it('The duration of the movie should return the correct number for really long movie - 341 minutes', function () {
-    var movieTry = [{ duration: '5h 41min' }];
+//   it('The duration of the movie should return the correct number for really long movie - 341 minutes', function () {
+//     var movieTry = [{ duration: '5h 41min' }];
 
-    expect(turnHoursToMinutes(movieTry)[0].duration).toBe(341);
-  });
+//     expect(turnHoursToMinutes(movieTry)[0].duration).toBe(341);
+//   });
 
-  it('It should return the correct number when the duration is only in hours', function () {
-    var movieTry = [{ duration: '2h' }];
+//   it('It should return the correct number when the duration is only in hours', function () {
+//     var movieTry = [{ duration: '2h' }];
 
-    expect(turnHoursToMinutes(movieTry)[0].duration).toBe(120);
-  });
+//     expect(turnHoursToMinutes(movieTry)[0].duration).toBe(120);
+//   });
 
-  it('It should return the correct number when the duration is only in minutes', function () {
-    var movieTry = [{ duration: '54min' }];
+//   it('It should return the correct number when the duration is only in minutes', function () {
+//     var movieTry = [{ duration: '54min' }];
 
-    expect(turnHoursToMinutes(movieTry)[0].duration).toBe(54);
-  });
-});
+//     expect(turnHoursToMinutes(movieTry)[0].duration).toBe(54);
+//   });
+// });
 
-describe('Get the average rate - ratesAverage', function () {
-  it('Defines ratesAverage', function () {
-    expect(typeof ratesAverage).toBe('function');
-  });
+// describe('Get the average rate - ratesAverage', function () {
+//   it('Defines ratesAverage', function () {
+//     expect(typeof ratesAverage).toBe('function');
+//   });
 
-  it('You should return a number my friend! Check parseFloat method!', function () {
-    expect(typeof ratesAverage(movies)).toBe('number');
-  });
+//   it('You should return a number my friend! Check parseFloat method!', function () {
+//     expect(typeof ratesAverage(movies)).toBe('number');
+//   });
 
-  it('You should return the average rate of 2 movies with rate 8 each!', function () {
-    expect(ratesAverage([{ rate: 8 }, { rate: 8 }])).toBe(8);
-  });
+//   it('You should return the average rate of 2 movies with rate 8 each!', function () {
+//     expect(ratesAverage([{ rate: 8 }, { rate: 8 }])).toBe(8);
+//   });
 
-  it('It should be rounded to 2 decimals digits', function () {
-    expect(ratesAverage([{ rate: 8 }, { rate: 9 }, { rate: 9 }, { rate: 7 }])).toBeCloseTo(8.25, 2);
-  });
+//   it('It should be rounded to 2 decimals digits', function () {
+//     expect(ratesAverage([{ rate: 8 }, { rate: 9 }, { rate: 9 }, { rate: 7 }])).toBeCloseTo(8.25, 2);
+//   });
 
-  it('It should be rounded to nearest hundredths ', function () {
-    expect(ratesAverage([{ rate: 8 }, { rate: 9 }, { rate: 9 }])).toBeCloseTo(8.67, 2);
-  });
-});
+//   it('It should be rounded to nearest hundredths ', function () {
+//     expect(ratesAverage([{ rate: 8 }, { rate: 9 }, { rate: 9 }])).toBeCloseTo(8.67, 2);
+//   });
+// });
 
 describe('Average rate of Drama Movies - dramaMoviesRate', function () {
   it('Defines dramaMoviesRate', function () {
@@ -99,27 +99,27 @@ describe('Average rate of Drama Movies - dramaMoviesRate', function () {
   });
 });
 
-describe('Order the movies by duration - orderByDuration', function () {
-  it('Defines orderByDuration', function () {
-    expect(typeof orderByDuration).toBe('function');
-  });
+// describe('Order the movies by duration - orderByDuration', function () {
+//   it('Defines orderByDuration', function () {
+//     expect(typeof orderByDuration).toBe('function');
+//   });
 
-  it('Should return an array', function () {
-    expect(typeof orderByDuration(movies)).toBe('object');
-  });
+//   it('Should return an array', function () {
+//     expect(typeof orderByDuration(movies)).toBe('object');
+//   });
 
-  it('Should return the element in a single element array', function () {
-    expect(orderByDuration([{ duration: 100 }])).toEqual([{ duration: 100 }]);
-  });
+//   it('Should return the element in a single element array', function () {
+//     expect(orderByDuration([{ duration: 100 }])).toEqual([{ duration: 100 }]);
+//   });
 
-  it('Return the new array in growing order', function () {
-    expect(orderByDuration([{ duration: 100 }, { duration: 180 }, { duration: 90 }])).toEqual([{ duration: 90 }, { duration: 100 }, { duration: 180 }]);
-  });
+//   it('Return the new array in growing order', function () {
+//     expect(orderByDuration([{ duration: 100 }, { duration: 180 }, { duration: 90 }])).toEqual([{ duration: 90 }, { duration: 100 }, { duration: 180 }]);
+//   });
 
-  it('If two movies have the same length, order them alphabetically by their title', function () {
-    expect(orderByDuration([{ title: 'abc', duration: 180 }, { title: 'bac', duration: 90 }, { title: 'aab', duration: 90 }])).toEqual([{ title: 'aab', duration: 90 }, { title: 'bac', duration: 90 }, { title: 'abc', duration: 180 }]);
-  });
-});
+//   it('If two movies have the same length, order them alphabetically by their title', function () {
+//     expect(orderByDuration([{ title: 'abc', duration: 180 }, { title: 'bac', duration: 90 }, { title: 'aab', duration: 90 }])).toEqual([{ title: 'aab', duration: 90 }, { title: 'bac', duration: 90 }, { title: 'abc', duration: 180 }]);
+//   });
+// });
 
 describe('Get how many movies - howManyMovies', function () {
   it('Defines howManyMovies', function () {
@@ -238,7 +238,7 @@ describe('Best year average - bestYearAvg', function () {
   });
 
   it('Should return the oldest year when there is a tie', function () {
-    var newMoviesArr = [{ year: '2000', rate: 9 }, { year: '2000', rate: 8 }, { year: '1978', rate: 10 }, { year: '1978', rate: 7 }];
+    var newMoviesArr = [{ year: 2000, rate: 9 }, { year: 2000, rate: 8 }, { year: 1978, rate: 10 }, { year: 1978, rate: 7 }];
 
     expect(bestYearAvg(newMoviesArr)).toEqual('The best year was 1978 with an average rate of 8.5');
   });
